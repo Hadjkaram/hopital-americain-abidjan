@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MedicalAI from "@/components/MedicalAI"; // <--- AJOUTE ICI
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +20,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-        {/* Le Menu (Header) reste fixe en haut */}
         <Header />
         
-        {/* Ici s'affiche le contenu de chaque page (Accueil, Contact, etc.) */}
         {children}
         
-        {/* Le Pied de page (Footer) s'affiche tout en bas */}
+        <MedicalAI /> {/* <--- AJOUTE ICI (Ça s'affichera par-dessus le footer) */}
+        
         <Footer />
       </body>
     </html>
